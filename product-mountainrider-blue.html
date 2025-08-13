@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MountainRider X1 (Blue) | Y&Q eBikes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Y&Q</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="index.html">Home</a>
+          <a class="nav-item nav-link active" href="products.html">Products <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="about.html">About</a>
+          <a class="nav-item nav-link btn btn-primary text-white tombol" href="#">Join Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <a href="products.html" class="btn btn-outline-primary btn-sm mb-4 btn-back">← Back to Products</a>
+    
+    <!-- Main Product Section -->
+    <div class="product-container fade-in">
+      <div class="row">
+        <!-- Main Product Image -->
+        <div class="col-lg-7 slide-in-left">
+          <div class="main-image-container">
+            <img id="mainDisplay" src="img/products/mountain28/blue/1.jpg" alt="MountainRider X1 - Blue" class="main-img">
+            <button onclick="showPrev()" class="nav-btn prev">‹</button>
+            <button onclick="showNext()" class="nav-btn next">›</button>
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="col-lg-5 slide-in-right">
+          <div class="product-info">
+            <h1 class="product-title">MountainRider X1 (Blue)</h1>
+            <p class="product-desc">
+              Premium 28-inch electric mountain bike with enhanced stability and control. Perfect for serious off-road enthusiasts.
+            </p>
+
+            <!-- Product Stats -->
+            <div class="product-stats">
+              <div class="stat-item">
+                <span class="stat-number">32</span>
+                <div class="stat-label">MPH Top Speed</div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">75</span>
+                <div class="stat-label">Miles Range</div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">750W</span>
+                <div class="stat-label">Motor Power</div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">48V</span>
+                <div class="stat-label">Battery</div>
+              </div>
+            </div>
+
+            <button class="btn btn-buy">Contact to Buy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="product-container fade-in">
+      <h3 class="gallery-title">Key Features</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="feature-list">
+            <li>750W brushless motor with 80 N·m torque</li>
+            <li>48V / 13Ah removable lithium battery</li>
+            <li>28-inch all-terrain wheels for stability</li>
+            <li>SHIMANO 7-speed gear system</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="feature-list">
+            <li>LCD display with USB charging</li>
+            <li>Aluminum alloy frame for durability</li>
+            <li>Adjustable seat and handlebar</li>
+            <li>Perfect for serious off-road riding</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="details-gallery" class="fade-in">
+      <h3 class="gallery-title">Product Gallery</h3>
+      <div class="thumbnail-grid">
+        <img src="img/products/mountain28/blue/1.jpg" class="thumbnail-img active" onclick="swapImage(this.src, this)">
+        <img src="img/products/mountain28/blue/7.jpg" class="thumbnail-img" onclick="swapImage(this.src, this)">
+        <img src="img/products/mountain28/blue/3.jpg" class="thumbnail-img" onclick="swapImage(this.src, this)">
+        <img src="img/products/mountain28/blue/DSC00902.JPG" class="thumbnail-img" onclick="swapImage(this.src, this)">
+        <img src="img/products/mountain28/blue/28.jpg" class="thumbnail-img" onclick="swapImage(this.src, this)">
+        <img src="img/products/mountain28/blue/DSC00887.JPG" class="thumbnail-img" onclick="swapImage(this.src, this)">
+        <img src="img/products/mountain28/blue/DSC00893.JPG" class="thumbnail-img" onclick="swapImage(this.src, this)">
+        <img src="img/products/mountain28/blue/DSC00928.JPG" class="thumbnail-img" onclick="swapImage(this.src, this)">
+      </div>
+    </section>
+  </div>
+
+  <script>
+    let imageList = [];
+    let currentIndex = 0;
+
+    // Auto-populate imageList based on the thumbnails
+    window.addEventListener('DOMContentLoaded', () => {
+      const thumbnails = document.querySelectorAll('.thumbnail-img');
+      imageList = Array.from(thumbnails).map(img => img.src);
+
+      // Set initial main image index
+      const mainImgSrc = document.getElementById('mainDisplay').src;
+      currentIndex = imageList.indexOf(mainImgSrc);
+    });
+
+    function swapImage(src, clickedElement) {
+      const mainImg = document.getElementById('mainDisplay');
+      mainImg.src = src;
+      currentIndex = imageList.indexOf(src);
+      
+      // Update active thumbnail
+      document.querySelectorAll('.thumbnail-img').forEach(img => img.classList.remove('active'));
+      clickedElement.classList.add('active');
+      
+      // Smooth scroll to main image
+      mainImg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function showNext() {
+      if (imageList.length === 0) return;
+      currentIndex = (currentIndex + 1) % imageList.length;
+      updateMainImage();
+    }
+
+    function showPrev() {
+      if (imageList.length === 0) return;
+      currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
+      updateMainImage();
+    }
+
+    function updateMainImage() {
+      const mainImg = document.getElementById('mainDisplay');
+      mainImg.src = imageList[currentIndex];
+      
+      // Update active thumbnail
+      document.querySelectorAll('.thumbnail-img').forEach((img, index) => {
+        if (img.src === imageList[currentIndex]) {
+          img.classList.add('active');
+        } else {
+          img.classList.remove('active');
+        }
+      });
+      
+      mainImg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        showPrev();
+      } else if (e.key === 'ArrowRight') {
+        showNext();
+      }
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

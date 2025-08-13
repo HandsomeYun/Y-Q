@@ -11,116 +11,460 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <title>Sandhika Galih</title>
+    <title>Y&Q - Electric Bikes for the Future</title>
+    
+    <style>
+      .hero-section {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: white;
+        padding: 120px 0 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('img/Background.webp') center/cover;
+        opacity: 0.1;
+        z-index: 1;
+      }
+      
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        font-weight: 300;
+      }
+      
+      /* Navbar Styling */
+      .navbar {
+        background: linear-gradient(to bottom, #1a1a2e, #16213e) !important;
+        box-shadow: 0 2px 10px rgba(26, 26, 46, 0.5) !important;
+        padding: 1rem 0 !important;
+      }
+      
+      .navbar-brand, .navbar-nav .nav-link {
+        color: white !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+      }
+      
+      .navbar-nav .nav-link:hover {
+        color: #007bff !important;
+      }
+      
+      .navbar-nav .nav-link.active {
+        color: #007bff !important;
+        font-weight: 600;
+      }
+      
+      .feature-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        border: none;
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      }
+      
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+      }
+      
+      .feature-icon img {
+        width: 40px;
+        height: 40px;
+        filter: brightness(0) invert(1);
+      }
+      
+      .stats-section {
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        color: white;
+        padding: 80px 0;
+      }
+      
+      .stat-item {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        display: block;
+      }
+      
+      .stat-label {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+      
+      .product-showcase {
+        padding: 80px 0;
+        background: #f8f9fa;
+      }
+      
+      .product-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        margin-bottom: 30px;
+      }
+      
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .product-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      
+      .product-card-body {
+        padding: 25px;
+      }
+      
+      .testimonial-section {
+        padding: 80px 0;
+        background: white;
+      }
+      
+      .testimonial-card {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-left: 4px solid #007bff;
+      }
+      
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+      
+      .testimonial-author {
+        font-weight: 600;
+        color: #007bff;
+      }
+      
+      .cta-section {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+      }
+      
+      .btn-custom {
+        border-radius: 50px;
+        padding: 15px 40px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-custom:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      
+      .section-subtitle {
+        font-size: 1.2rem;
+        color: #6c757d;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+        
+        .stat-number {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
   </head>
   <body>
-
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
-        <a class="navbar-brand" href="#">Sandhika</a>
+        <a class="navbar-brand" href="#">Y&Q</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Pricing</a>
-            <a class="nav-item nav-link" href="#">Features</a>
-            <a class="nav-item nav-link" href="#">About</a>
+            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="products.html">Products</a>
+            <a class="nav-item nav-link" href="about.html">About</a>
             <a class="nav-item nav-link btn btn-primary text-white tombol" href="#">Join Us</a>
           </div>
         </div>
       </div>
     </nav>
-    <!-- akhir Navbar -->
 
-    <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid">
+    <!-- Hero Section -->
+    <section class="hero-section">
       <div class="container">
-        <h1 class="display-4">Get work done <span>faster</span> <br>and <span>better</span> with us</h1>
-        <a href="#" class="btn btn-info btn-lg tombol">View Our Work</a>
-      </div>
-    </div>
-    <!-- akhir Jumbotron -->
-
-
-    <!-- container -->
-    <div class="container">
-
-      <!-- info panel -->
-      <div class="row justify-content-center">
-        <div class="col-10 info-panel">
-          <div class="row">
-            <div class="col-sm">
-              <img src="img/employee.png" alt="Employee" class="img-fluid float-left">
-              <h4>24 Hours</h4>
-              <p>Lorem ipsum dolor sit amet.</p>
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content">
+            <h1 class="hero-title">The Future Rolls <span style="color: #007bff;">Electric.</span></h1>
+            <p class="hero-subtitle">Experience the perfect blend of power, style, and sustainability with Y&Q electric bikes. Transform your daily commute and weekend adventures.</p>
+            <div class="d-flex flex-wrap">
+              <a href="products.html" class="btn btn-light btn-custom mr-3 mb-3">Explore Bikes</a>
+              <a href="about.html" class="btn btn-outline-light btn-custom mb-3">Learn More</a>
             </div>
-            <div class="col-lg">
-              <img src="img/hires.png" alt="HiRes" class="img-fluid float-left">
-              <h4>High-Res</h4>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="col-lg">
-              <img src="img/security.png" alt="Security" class="img-fluid float-left">
-              <h4>Security</h4>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </div>
+          </div>
+          <div class="col-lg-6">
+            <img src="img/firstpage.png" alt="Y&Q eBike" class="img-fluid">
           </div>
         </div>
       </div>
-      <!-- akhir info panel -->
+    </section>
 
+    <!-- Features Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                 🔋
+               </div>
+               <h4>Long Range</h4>
+               <p>Travel up to 50 miles on a single charge with our advanced battery technology. Perfect for daily commutes and weekend adventures.</p>
+             </div>
+           </div>
+           <div class="col-lg-4 mb-4">
+             <div class="feature-card">
+               <div class="feature-icon">
+                 🌱
+               </div>
+               <h4>Eco-Friendly</h4>
+               <p>Zero emissions, zero guilt. Help reduce your carbon footprint while enjoying the freedom of electric mobility.</p>
+             </div>
+           </div>
+           <div class="col-lg-4 mb-4">
+             <div class="feature-card">
+               <div class="feature-icon">
+                 📱
+               </div>
+               <h4>Smart Features</h4>
+               <p>USB charging, LCD displays, and smart connectivity. Stay connected and powered while you ride.</p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
 
-      <!-- Workingspace -->
-      <div class="row workingspace">
-        <div class="col-lg-6">
-          <img src="img/workingspace.png" alt="Working Space" class="img-fluid">
-        </div>
-        <div class="col-lg-5">
-          <h2>You <span>Work</span> Like at <span>Home</span></h2>
-          <p>Bekerja dengan suasana hati yang lebih asik, menyenangkan
-            dan mempelajari hal baru setiap harinya.</p>
-          <a href="#" class="btn btn-danger tombol">Gallery</a>
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="stat-item">
+              <span class="stat-number">50</span>
+              <div class="stat-label">Miles Range</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-item">
+              <span class="stat-number">32</span>
+              <div class="stat-label">MPH Top Speed</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-item">
+              <span class="stat-number">750W</span>
+              <div class="stat-label">Motor Power</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-item">
+              <span class="stat-number">6</span>
+              <div class="stat-label">Bike Models</div>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- akhir Workingspace -->
+    </section>
 
-
-      <!-- Testimonial -->
-      <section class="testimonial">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <p>"Bekerja dengan suasana hati yang lebih asik dan mempelajari hal baru setiap harinya."</p>
+    <!-- Product Showcase -->
+    <section class="product-showcase">
+      <div class="container">
+        <h2 class="section-title">Featured Bikes</h2>
+        <p class="section-subtitle">Discover our most popular electric bike models</p>
+        
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <img src="img/products/fold/black/套图-黑自行车-1-1.png" alt="UrbanFold Q5 Black">
+              <div class="product-card-body">
+                <h5>UrbanFold Q5 (Black)</h5>
+                <p>Compact, foldable design perfect for city commuters. Easy storage and powerful performance.</p>
+                <a href="product-urbanfold-black.html" class="btn btn-primary btn-sm">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <img src="img/products/mountain27.5/green/1.png" alt="TrailBlazer Z2 Green">
+              <div class="product-card-body">
+                <h5>TrailBlazer Z2 (Green)</h5>
+                <p>Mountain-ready with all-terrain tires and powerful motor. Conquer any trail with confidence.</p>
+                <a href="product-trailblazer-green.html" class="btn btn-primary btn-sm">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <img src="img/products/mountain28/black/887095766921664795.jpg" alt="MountainRider X1 Black">
+              <div class="product-card-body">
+                <h5>MountainRider X1 (Black)</h5>
+                <p>28-inch wheels for ultimate stability and control. Built for serious off-road adventures.</p>
+                <a href="product-mountainrider-black.html" class="btn btn-primary btn-sm">Learn More</a>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-6 justify-content-center d-flex">
-            <img src="img/img1.png" alt="Testimonial 1">
-            <img src="img/img2.png" alt="Testimonial 2" class="img-main">
-            <img src="img/img3.png" alt="Testimonial 3">
+        
+        <div class="text-center mt-4">
+          <a href="products.html" class="btn btn-outline-primary btn-custom">View All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Y&Q -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <img src="img/products/fold/blue/套图-蓝自行车-5.png" alt="Y&Q eBike" class="img-fluid rounded">
+          </div>
+          <div class="col-lg-6">
+            <h2 class="section-title text-left">Why Choose <span style="color: #007bff;">Y&Q?</span></h2>
+            <p class="lead mb-4">Smart, stylish, and built to last — Y&Q eBikes are designed for both city streets and mountain trails.</p>
+            <ul class="list-unstyled">
+              <li class="mb-3">✅ <strong>Long Range:</strong> Up to 50 miles on a single charge</li>
+              <li class="mb-3">✅ <strong>Eco-Friendly:</strong> Zero emissions, sustainable transportation</li>
+              <li class="mb-3">✅ <strong>Versatile Models:</strong> Foldable and mountain options</li>
+              <li class="mb-3">✅ <strong>Premium Quality:</strong> Lightweight, durable, and road-ready</li>
+              <li class="mb-3">✅ <strong>Multiple Colors:</strong> Choose your perfect style</li>
+              <li class="mb-3">✅ <strong>Easy to Use:</strong> Intuitive controls and smooth operation</li>
+            </ul>
+            <a href="about.html" class="btn btn-primary btn-custom">Learn More About Us</a>
           </div>
         </div>
-        <div class="row justify-content-center info-text">
-          <div class="col-lg text-center">
-            <h5>Sunny Ye</h5>
-            <p>Designer</p>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonial-section">
+      <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Real experiences from Y&Q riders</p>
+        
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="testimonial-card">
+              <p class="testimonial-text">"My UrbanFold Q5 has completely transformed my daily commute. It's fast, reliable, and the folding feature is a game-changer for apartment living."</p>
+              <div class="testimonial-author">— Sarah M., City Commuter</div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-card">
+              <p class="testimonial-text">"The TrailBlazer Z2 handles mountain trails like a dream. The battery life is incredible, and the build quality is outstanding."</p>
+              <div class="testimonial-author">— Mike R., Adventure Rider</div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-card">
+              <p class="testimonial-text">"Y&Q bikes are the perfect blend of power and style. I love how eco-friendly they are while still being incredibly fun to ride."</p>
+              <div class="testimonial-author">— Lisa K., Eco-Conscious Rider</div>
+            </div>
           </div>
         </div>
-      </section>
-      <!-- akhir Testimonial -->
+      </div>
+    </section>
 
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="mb-4">Ready to Join the Electric Revolution?</h2>
+        <p class="lead mb-5">Experience the future of transportation with Y&Q electric bikes. Power, style, and sustainability in perfect harmony.</p>
+        <div class="d-flex flex-wrap justify-content-center">
+          <a href="products.html" class="btn btn-light btn-custom mr-3 mb-3">Shop Now</a>
+          <a href="about.html" class="btn btn-outline-light btn-custom mb-3">Learn More</a>
+        </div>
+      </div>
+    </section>
 
-    </div>
-    <!-- akhir container -->
-
-
-
-
-    
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Y&Q Electric Bikes</h5>
+            <p>Pioneering the future of electric mobility.</p>
+          </div>
+          <div class="col-md-6 text-md-right">
+            <p>&copy; 2024 Y&Q. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

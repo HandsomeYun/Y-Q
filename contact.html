@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us | Y&Q eBikes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Y&Q</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="index.html">Home</a>
+          <a class="nav-item nav-link" href="products.html">Products</a>
+          <a class="nav-item nav-link" href="about.html">About</a>
+          <a class="nav-item nav-link active" href="contact.html">Contact <span class="sr-only">(current)</span></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 mx-auto text-center hero-content">
+          <h1 class="hero-title">Get in <span style="color: #007bff;">Touch</span></h1>
+          <p class="hero-subtitle">Ready to start your electric bike journey? We're here to help you find the perfect ride.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Contact Information -->
+        <div class="col-lg-5 mb-5">
+          <div class="contact-info-card fade-in">
+            <h2 class="section-title text-left mb-4">Contact Information</h2>
+            <p class="lead mb-4">We're here to help you find the perfect electric bike for your needs. Reach out to us anytime!</p>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                📞
+              </div>
+              <div class="contact-details">
+                <h5>Phone</h5>
+                <p><a href="tel:3104260028" class="contact-link">(310) 426-0028</a></p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                ✉️
+              </div>
+              <div class="contact-details">
+                <h5>Email</h5>
+                <p><a href="mailto:zyh2538179305@gmail.com" class="contact-link">zyh2538179305@gmail.com</a></p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                🕒
+              </div>
+              <div class="contact-details">
+                <h5>Business Hours</h5>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                Saturday: 10:00 AM - 4:00 PM<br>
+                Sunday: Closed</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                💬
+              </div>
+              <div class="contact-details">
+                <h5>Response Time</h5>
+                <p>We typically respond within 24 hours during business days.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+          <div class="contact-form-card fade-in">
+            <h2 class="section-title text-left mb-4">Send Us a Message</h2>
+            <form class="contact-form" action="https://formspree.io/f/mrbljdyy" method="POST">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName" class="form-label">First Name *</label>
+                  <input type="text" class="form-control" id="firstName" name="firstName" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="lastName" class="form-label">Last Name *</label>
+                  <input type="text" class="form-control" id="lastName" name="lastName" required>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Email Address *</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" name="phone">
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject *</label>
+                <select class="form-control" id="subject" name="subject" required>
+                  <option value="">Select a subject</option>
+                  <option value="product-inquiry">Product Inquiry</option>
+                  <option value="purchase">Purchase Information</option>
+                  <option value="support">Technical Support</option>
+                  <option value="warranty">Warranty Service</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div class="mb-3">
+                <label for="message" class="form-label">Message *</label>
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us about your inquiry..." required></textarea>
+              </div>
+              
+              <div class="mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                  <label class="form-check-label" for="newsletter">
+                    Subscribe to our newsletter for updates and special offers
+                  </label>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-custom">Send Message</button>
+            </form>
+            
+            <!-- Alternative Contact Methods -->
+            <div class="mt-4 text-center">
+              <p class="text-muted mb-3">Or contact us directly:</p>
+              <a href="mailto:zyh2538179305@gmail.com?subject=Y&Q eBike Inquiry" class="btn btn-outline-primary btn-custom mr-2">
+                📧 Email Us Directly
+              </a>
+              <a href="tel:3104260028" class="btn btn-outline-success btn-custom">
+                📞 Call Us Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="section-title text-center mb-5">Frequently Asked Questions</h2>
+          
+          <div class="faq-item">
+            <h5 class="faq-question">What payment methods do you accept?</h5>
+            <p class="faq-answer">We accept all major credit cards, bank transfers, and cash payments. </p>
+          </div>
+          
+          <div class="faq-item">
+            <h5 class="faq-question">Do you offer test rides?</h5>
+            <p class="faq-answer">Yes! We encourage test rides to help you find the perfect electric bike. Contact us to schedule a test ride appointment.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h5 class="faq-question">What warranty do you provide?</h5>
+            <p class="faq-answer">All our electric bikes come with a comprehensive warranty covering the frame, motor, battery, and electronic components.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h5 class="faq-question">Do you provide delivery and setup?</h5>
+            <p class="faq-answer">Yes, we offer delivery and professional setup services. We'll ensure your bike is properly assembled and ready to ride.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="mb-4">Ready to Start Your Electric Journey?</h2>
+          <p class="lead mb-5">Contact us today to learn more about our electric bikes and find the perfect model for your lifestyle.</p>
+          <a href="products.html" class="btn btn-light btn-custom mr-3">View Our Products</a>
+          <a href="tel:3104260028" class="btn btn-outline-light btn-custom">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Y&Q Electric Bikes</h5>
+          <p>Pioneering the future of electric mobility.</p>
+        </div>
+        <div class="col-md-6 text-md-right">
+          <p>&copy; 2024 Y&Q. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Form Handling Script -->
+  <script>
+    // Handle form submission
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      
+      // Show loading state
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Sending...';
+      submitBtn.disabled = true;
+      
+      // Submit form using Formspree
+      const formData = new FormData(this);
+      
+      fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .then(data => {
+        if (data.ok) {
+          // Success - Formspree confirmed the email was sent
+          showAlert('success', 'Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours!');
+          this.reset();
+        } else {
+          // Formspree error
+          throw new Error('Formspree error');
+        }
+      })
+      .catch(error => {
+        // Network or other error
+        console.error('Error:', error);
+        showAlert('warning', 'Your message has been submitted. If you don\'t hear from us within 24 hours, please call us at (310) 426-0028 or email zyh2538179305@gmail.com');
+        this.reset();
+      })
+      .finally(() => {
+        // Reset button
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      });
+    });
+    
+    // Show alert function
+    function showAlert(type, message) {
+      // Remove existing alerts
+      const existingAlert = document.querySelector('.alert');
+      if (existingAlert) {
+        existingAlert.remove();
+      }
+      
+      // Create new alert
+      const alertDiv = document.createElement('div');
+      alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+      alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      `;
+      
+      // Insert alert before the form
+      const formCard = document.querySelector('.contact-form-card');
+      formCard.insertBefore(alertDiv, formCard.firstChild);
+      
+      // Auto-dismiss after 8 seconds
+      setTimeout(() => {
+        if (alertDiv.parentNode) {
+          alertDiv.remove();
+        }
+      }, 8000);
+    }
+  </script>
+</body>
+</html>
